@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ts:token xmlns:ts="http://tokenscript.org/2024/01/tokenscript"
+          xmlns:xml="http://www.w3.org/XML/1998/namespace"
+          xsi:schemaLocation="http://tokenscript.org/2024/01/tokenscript https://www.tokenscript.org/schemas/2024-01/tokenscript.xsd"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:ethereum="urn:ethereum:constantinople"
+          name="Tapp Name Test">
+    <ts:label>
+        <ts:plurals xml:lang="en">
+            <ts:string quantity="one">Tapp Singular Name Test</ts:string>
+            <ts:string quantity="other">Tapp Singular Name Tests</ts:string>
+        </ts:plurals>
+    </ts:label>
+    <ts:meta>
+        <ts:description xml:lang="en">Tapp Description Test</ts:description>
+        <ts:aboutUrl xml:lang="en">https://example.com</ts:aboutUrl>
+        <ts:iconUrl xml:lang="en">https://tlink-web.vercel.app/proxy/image?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F6268441%3Fv%3D4</ts:iconUrl>
+    </ts:meta>
+    <ts:contract interface="erc20" name="Bui Huy Dong">
+        <ts:address network="11155111">0x2Df80256A9047B7F366441c80559E4cE59bdb1F9</ts:address>
+    </ts:contract>
+    <ts:origins>
+        <ts:ethereum contract="Bui Huy Dong"/>
+    </ts:origins>
+    <ts:cards>
+        <ts:card type="action" name="Transfer">
+            <ts:label>
+                <ts:string xml:lang="en">Transfer</ts:string>
+            </ts:label>
+            <ts:view xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+                <button>Transfer</button>
+            </ts:view>
+        </ts:card>
+        <ts:card type="action" name="Withdraw">
+            <ts:label>
+                <ts:string xml:lang="en">Withdraw</ts:string>
+            </ts:label>
+            <ts:view xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+                <button>Withdraw</button>
+            </ts:view>
+        </ts:card>
+        <ts:card type="action" name="Approve">
+            <ts:label>
+                <ts:string xml:lang="en">Approve</ts:string>
+            </ts:label>
+            <ts:view xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+                <button>Approve</button>
+            </ts:view>
+        </ts:card></ts:cards>
+    <ts:attribute-types>
+        <ts:attribute-type id="decimals" syntax="1.3.6.1.4.1.1466.115.121.1.36">
+            <ts:name>
+                <ts:string xml:lang="en">decimals</ts:string>
+            </ts:name>
+            <ts:origins>
+                <ethereum:call function="decimals" contract="Bui Huy Dong" as="uint"/>
+            </ts:origins>
+        </ts:attribute-type>
+        <ts:attribute-type id="symbol" syntax="1.3.6.1.4.1.1466.115.121.1.26">
+            <ts:name>
+                <ts:string xml:lang="en">symbol</ts:string>
+            </ts:name>
+            <ts:origins>
+                <ethereum:call function="symbol" contract="Bui Huy Dong" as="utf8"/>
+            </ts:origins>
+        </ts:attribute-type>
+    </ts:attribute-types>
+</ts:token>
